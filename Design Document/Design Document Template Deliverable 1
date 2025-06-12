@@ -1,0 +1,21 @@
+This Card class represents a single playing card in a standard deck. 
+First the Card class was imported with the objects method. Public enum was declared with the Suit variable with the values HEART, DIAMOND, SPADE, CLUB and public enum was also declared with the Value variable with the values ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING, 
+then the Value value and int index variables were declared as private. The public Card(){} was first set with the no args constructor, then public card has the variables Suit suit, Value value with this.suit = suit; and this.value=value; The getter and setter methods were set with the variables getSuit, setSuit, 
+getValue, and setValue. For starters, the override method was set to public String toString(), then with the return method saying what suit and value are displayed. Secondly the override method was set to public int hashCode() with hash set to 3, hash = 53 * hash + Objects.hashCode(this.suit); 
+hash = 53 * hash + Objects.hasCode(this.value); return hash; Finally the override method was written with the boolean equals function.
+
+The CardGenerator class is designed to generate a list of playing cards randomly. First the class is part of the cards package. The public class CardGenerator is responsible for generating all cards. 
+The method public ArrayList<Card> generateCards (int numCards) generates a number of card objects and returns them in the ArrayList. The method ArrayList<Card> hand = new ArrayList<Card>(); creates a new list to hold the cards like a player’s hand. 
+The Random rnd = new Random(); creates a random object to generate random numbers. Card.Suit.values returns an array of all suits values (eg. Hearts, Diamonds, etc). Card.Value.values returns an array of all value enums (eg. Ace, 2, 3, King, etc) .length gets the number of options available for suit and value. 
+The for loop starts a loop that runs numCards times and then creating one new card each time. The int rndSuit and int rndValue generate random integers. c.setValue and c.setSuit randomly assign a value and a suit to a card. 
+The hand.add(c) adds the generated card to the hand. Finally after the loop the return hand; is returned.
+
+The Start class represents the beginning of a simple card game simulation. The public class Start  is commonly used as the driver to start running the program. After the public class the main method begins the execution. User player1 = new User(); creates an object called player1 of type User. 
+The player1.startingHand(7); function calls the method startingHand() on player1, asking for 7 cards to be dealt. The player1.displayHand(); function calls a method that prints or shows all cards the player has in hand. Finally the System.out.println(“Game Complete”) message is printed.
+
+The User class is part of a card game simulation in Java. It models a player who has a hand of cards and can receive cards from a dealer. The cards class starts from a package, then java.util.ArrayList is imported. 
+The public class User represents a player in the game, private ArrayList<Card> hand = new ArrayList<Card>(); this hand stores the cards the player holds, private CardGenerator dealer = new CardGenerator(); this dealer is used to generate the cards for the player. 
+Next, the getter and setter methods are declared for getHand and setHand. They set the player’s to a given list of cards, the public void startingHand method deals num random cards to the player using the CardGenerator, public void displayHand prints each card in the player’s hand to the console.
+
+The UML diagram has the variables Start, User, CardGenerator, Card, Suit, and Value. The Suit and Value variables are both enum. The Card class has the index: int variable and Card with the values suit: Suit and value: Values, the toString method, hashCode method, and equals object with a boolean. 
+The Start class starts with a main method. The CardGenerator generates cards with the variable numCards: int. Finally the User class has the startingHand and displayHand methods.
